@@ -1,6 +1,7 @@
 import pyautogui
 from Temporizador import iniciar_contagem
 import pyperclip
+from time import sleep
 
 # A lista de contatos
 lista_contatos = ["Meu Numero", "Base de teste", "Família Nascimento", "Teste 1", "Teste 2", "Teste 3"]
@@ -32,7 +33,27 @@ pyautogui.write(str(lista_contatos[0]))
 del lista_contatos[0]   # Eliminando o primeiro contato, já que iremos mandar a mensagem nele primeiro
 
 pyautogui.press("enter")
-iniciar_contagem(4)
+iniciar_contagem(5)
 pyautogui.click(x=553, y=701)
 pyautogui.hotkey("ctrl", "v")
+pyautogui.press("enter")
+
+# Enviando a mesma mensagem para os demais contatos.
+pyautogui.click(x=1076, y=621, button="right")
+
+sleep(1)
+pyautogui.doubleClick(x=1155, y=312)
+
+pyautogui.PAUSE = 2
+for index, contato in enumerate(lista_contatos):
+    pyautogui.write(str(contato))
+    if index == 0:
+        pyautogui.press("tab")
+        pyautogui.press("enter")
+        continue
+    
+    pyautogui.press("tab", presses=2, interval=1)
+    pyautogui.press("enter")
+    
+pyautogui.press("tab")
 pyautogui.press("enter")
