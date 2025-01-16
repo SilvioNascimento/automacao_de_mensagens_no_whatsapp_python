@@ -1,5 +1,4 @@
 import pyautogui
-from time import sleep
 from Temporizador import iniciar_contagem
 import pyperclip
 
