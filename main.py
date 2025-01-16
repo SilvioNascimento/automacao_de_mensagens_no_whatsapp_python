@@ -1,5 +1,4 @@
 import pyautogui
-import pandas as pd
 from time import sleep
 from Temporizador import iniciar_contagem
 
