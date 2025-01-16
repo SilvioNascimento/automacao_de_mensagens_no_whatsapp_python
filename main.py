@@ -1,6 +1,7 @@
 import pyautogui
 import pandas as pd
 from time import sleep
+from Temporizador import iniciar_contagem
 
 # Definindo o tempo de espera de cada ação (em segundos)
 pyautogui.PAUSE = 1
@@ -11,5 +12,5 @@ pyautogui.write("whatsapp")
 pyautogui.press("enter")
 
 # Tempo de espera até que o WhatsApp esteja carregado
-sleep(10)
+iniciar_contagem(5)
 
