@@ -2,7 +2,7 @@ import tkinter as tk
 
 def iniciar_contagem(tempo_restante: int):
     def atualizar_tempo(tempo):
-        if tempo >= 0:
+        if tempo >= 1:
             label.config(
                 text=f"""Tempo restante: {tempo} segundos. 
 Não faça nenhuma ação no PC!"""
